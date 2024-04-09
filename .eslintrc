@@ -1,11 +1,13 @@
 {
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2020,
+    "ecmaVersion": "latest",
     "project": "./tsconfig.all.json",
     "sourceType": "module"
   },
-  "plugins": ["@destinationstransfers", "@typescript-eslint"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "extends": [
     "plugin:@destinationstransfers/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -26,7 +28,11 @@
     "node/no-unsupported-features/es-syntax": "off",
     "node/no-unsupported-features/node-builtins": [
       "error",
-      { "ignores": ["fs.promises"] }
+      {
+        "ignores": [
+          "fs.promises"
+        ]
+      }
     ],
     "import/no-unresolved": "off",
     "dependencies/no-unresolved": "off",
@@ -44,7 +50,10 @@
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/explicit-function-return-type": [
       "error",
-      { "allowExpressions": true, "allowTypedFunctionExpressions": true }
+      {
+        "allowExpressions": true,
+        "allowTypedFunctionExpressions": true
+      }
     ],
     "@typescript-eslint/consistent-type-assertions": [
       "error",
@@ -90,7 +99,10 @@
   },
   "overrides": [
     {
-      "files": ["__tests__/*.ts", "*.test.ts"],
+      "files": [
+        "__tests__/*.ts",
+        "*.test.ts"
+      ],
       "env": {
         "jest": true
       },
@@ -101,9 +113,13 @@
     }
   ],
   "settings": {
-    "import/extensions": [".ts"],
+    "import/extensions": [
+      ".ts"
+    ],
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts"]
+      "@typescript-eslint/parser": [
+        ".ts"
+      ]
     }
   }
 }
