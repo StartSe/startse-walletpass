@@ -6,7 +6,7 @@
 # @walletpass/pass-js
 
 <p align="center">A Node.js library for generating Apple Wallet passes with localizations, NFC and web service push updates support. Written in Typescript.</p>
-<p align="center">Fork of <a href="https://github.com/walletpass/pass-js">@walletpass/pass-js</a></p>s
+<p align="center">Fork of <a href="https://github.com/walletpass/pass-js">@walletpass/pass-js</a></p>
 
 <br><br><br>
 
