@@ -2,7 +2,7 @@
   "name": "@startse/pass-js",
   "description": "Apple Wallet Pass generating and pushing updates from Node.js",
   "author": "Konstantin Vyatkin <tino@vtkn.io>",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "homepage": "https://github.com/StartSe/startse-walletpass",
   "license": "MIT",
   "licenses": [

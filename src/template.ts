@@ -17,7 +17,7 @@ import { PassStyle, ApplePass, Options } from './interfaces';
 import { PassBase } from './lib/base-pass';
 import { unzipBuffer } from './lib/yazul-promisified';
 
-import stripJsonComments from 'strip-json-comments';
+import { default as stripJsonComments } from 'strip-json-comments';
 
 const {
   HTTP2_HEADER_METHOD,
@@ -79,9 +79,9 @@ export class Template extends PassBase {
     if (entries.find(entry => entry.isFile() && entry.name === 'pass.json')) {
       // loading main JSON file
       const jsonContent = await readFile(join(folderPath, 'pass.json'), 'utf8');
-      const passJson = JSON.parse(stripJsonComments(jsonContent)) as Partial<
-        ApplePass
-      >;
+      const passJson = JSON.parse(
+        stripJsonComments(jsonContent),
+      ) as Partial<ApplePass>;
 
       // Trying to detect the type of pass
       let type: PassStyle | undefined;
