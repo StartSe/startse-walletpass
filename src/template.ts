@@ -343,6 +343,22 @@ export class Template extends PassBase {
   }
 
   /**
+   * Closes the cached APN (HTTP/2) connection opened by pushUpdates, if any.
+   *
+   * pushUpdates() leaves the session open so it can be reused across calls, but
+   * never closes it. Callers that build a short-lived Template per push (e.g. one
+   * per pass in a scheduled batch) must call this when done, otherwise every open
+   * session — and, through its 'goaway' listener, the whole Template — is retained,
+   * leaking memory and sockets.
+   *
+   * @memberof Template
+   */
+  closeConnection(): void {
+    if (this.apn && !this.apn.destroyed) this.apn.destroy();
+    this.apn = undefined;
+  }
+
+  /**
    * Create a new pass from a template.
    *
    * @param {object} fields
